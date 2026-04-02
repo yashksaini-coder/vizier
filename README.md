@@ -4,8 +4,8 @@
 
 <div align="center">
 
-[![CI](https://github.com/yashksaini-coder/vizier/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/yashksaini-coder/vizier/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/yashksaini-coder/vizier/blob/main/LICENSE)
+[![CI](https://github.com/yashksaini-coder/rustlens/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/yashksaini-coder/rustlens/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/yashksaini-coder/rustlens/blob/main/LICENSE)
 [![Crates.io](https://img.shields.io/crates/v/rustlens?label=crates.io)](https://crates.io/crates/rustlens)
 [![Rust](https://img.shields.io/badge/Rust-1.70+-blue?logo=rust)](https://www.rust-lang.org/)
 
@@ -19,7 +19,6 @@ Built with [Ratatui](https://ratatui.rs) for a smooth, responsive TUI experience
 
 [![Built With Ratatui](https://img.shields.io/badge/Built_With_Ratatui-000?logo=ratatui&logoColor=fff)](https://ratatui.rs/)
 
-![Rustlens Demo GIF](./images/demo.gif)
 
 ## ✨ Features
 
@@ -61,7 +60,7 @@ cargo install --path .
 
 ### Pre-built binaries
 
-See [Releases](https://github.com/yashksaini-coder/vizier/releases) for Linux (x86_64), macOS (x86_64, Apple Silicon), and Windows (x86_64) binaries.
+See [Releases](https://github.com/yashksaini-coder/rustlens/releases) for Linux (x86_64), macOS (x86_64, Apple Silicon), and Windows (x86_64) binaries.
 
 ## 🚀 Usage
 
@@ -150,7 +149,7 @@ We use [Conventional Commits](https://www.conventionalcommits.org/). Examples:
 - `refactor!: change API structure` (breaking change)
 ## Star History
 
-![Star History Chart](https://api.star-history.com/svg?repos=yashksaini-coder/vizier&type=date&legend=top-left)
+![Star History Chart](https://api.star-history.com/svg?repos=yashksaini-coder/rustlens&type=date&legend=top-left)
 
 
 ## 📄 License
