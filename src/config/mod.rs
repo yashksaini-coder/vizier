@@ -1,4 +1,4 @@
-//! Configuration system for Oracle
+//! Configuration system for Vizier
 
 mod settings;
 
