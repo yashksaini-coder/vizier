@@ -13,9 +13,9 @@ use ratatui::{
 };
 
 use super::types::{Focus, Tab};
-use super::VizierUi;
+use super::RustlensUi;
 
-impl<'a> VizierUi<'a> {
+impl<'a> RustlensUi<'a> {
     pub(super) fn render_list(&self, area: Rect, buf: &mut Buffer) {
         if self.current_tab == Tab::Crates {
             if self.selected_installed_crate.is_some() {

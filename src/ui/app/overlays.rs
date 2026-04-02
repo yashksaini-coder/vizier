@@ -8,9 +8,9 @@ use ratatui::{
     widgets::{Block, Borders, Clear, Paragraph, Widget},
 };
 
-use super::VizierUi;
+use super::RustlensUi;
 
-impl<'a> VizierUi<'a> {
+impl<'a> RustlensUi<'a> {
     pub(super) fn render_settings_overlay(&self, area: Rect, buf: &mut Buffer) {
         if !self.show_settings {
             return;

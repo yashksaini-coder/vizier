@@ -1,4 +1,4 @@
-//! Main Vizier TUI application — composed from blocks (header, list, status, overlays, right_panel).
+//! Main Rustlens TUI application — composed from blocks (header, list, status, overlays, right_panel).
 
 mod header;
 mod layout;
@@ -26,8 +26,8 @@ use ratatui::{
     widgets::{block::BorderType, Block, Borders, Widget},
 };
 
-/// Main Vizier UI widget — data and builder; rendering is delegated to block modules.
-pub struct VizierUi<'a> {
+/// Main Rustlens UI widget — data and builder; rendering is delegated to block modules.
+pub struct RustlensUi<'a> {
     // Data
     pub(super) items: &'a [AnalyzedItem],
     pub(super) all_items_impl_lookup: Option<&'a [AnalyzedItem]>,
@@ -64,7 +64,7 @@ pub struct VizierUi<'a> {
     pub(super) copilot_chat_scroll: usize,
 }
 
-impl<'a> VizierUi<'a> {
+impl<'a> RustlensUi<'a> {
     pub fn new(theme: &'a Theme) -> Self {
         Self {
             items: &[],
@@ -301,7 +301,7 @@ impl<'a> VizierUi<'a> {
     }
 }
 
-impl Widget for VizierUi<'_> {
+impl Widget for RustlensUi<'_> {
     fn render(self, area: Rect, buf: &mut Buffer) {
         use layout::{BODY_MARGIN, HEADER_HEIGHT, STATUS_HEIGHT};
 

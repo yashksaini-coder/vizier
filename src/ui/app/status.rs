@@ -9,9 +9,9 @@ use ratatui::{
 };
 
 use super::types::{Focus, Tab};
-use super::VizierUi;
+use super::RustlensUi;
 
-impl<'a> VizierUi<'a> {
+impl<'a> RustlensUi<'a> {
     pub(super) fn render_status(&self, area: Rect, buf: &mut Buffer) {
         let focus_indicator = match self.focus {
             Focus::Search => ("🔍", "Search"),
