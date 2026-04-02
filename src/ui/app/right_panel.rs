@@ -15,7 +15,7 @@ use ratatui::{
 };
 
 use super::types::{Focus, Tab};
-use super::OracleUi;
+use super::VizierUi;
 
 /// Parse a line of markdown into styled spans: **bold**, `code`, ## header.
 fn markdown_line_to_spans(line: &str, theme: &Theme, base_style: Style) -> Vec<Span<'static>> {
@@ -77,7 +77,7 @@ fn markdown_line_to_spans(line: &str, theme: &Theme, base_style: Style) -> Vec<S
     spans
 }
 
-impl<'a> OracleUi<'a> {
+impl<'a> VizierUi<'a> {
     pub(super) fn render_vertical_divider(&self, area: Rect, buf: &mut Buffer) {
         let style = self.theme.style_border();
         let symbol = "│";

@@ -9,9 +9,9 @@ use ratatui::{
 };
 
 use super::types::{Focus, Tab};
-use super::OracleUi;
+use super::VizierUi;
 
-impl<'a> OracleUi<'a> {
+impl<'a> VizierUi<'a> {
     pub(super) fn render_status(&self, area: Rect, buf: &mut Buffer) {
         let focus_indicator = match self.focus {
             Focus::Search => ("🔍", "Search"),
