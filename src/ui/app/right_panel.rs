@@ -361,7 +361,7 @@ impl<'a> VizierUi<'a> {
 
         let total_lines = lines.len();
         let visible_height = messages_area.height as usize;
-        let max_scroll = total_lines.saturating_sub(visible_height).max(0);
+        let max_scroll = total_lines.saturating_sub(visible_height);
         let scroll = self.copilot_chat_scroll.min(max_scroll);
 
         // Line-based scroll: slice the content (like inspector) so scroll is in line units, not rows.

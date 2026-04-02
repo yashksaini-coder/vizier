@@ -293,6 +293,6 @@ pub fn filter_candidates(
         })
         .collect();
 
-    scored.sort_by(|a, b| b.score.cmp(&a.score));
+    scored.sort_by_key(|b| std::cmp::Reverse(b.score));
     scored
 }
