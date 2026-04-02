@@ -1,6 +1,6 @@
-# Contributing to Oracle
+# Contributing to Vizier
 
-Thank you for your interest in contributing to Oracle! 🎉
+Thank you for your interest in contributing to Vizier! 🎉
 
 ## Getting Started
 
@@ -70,7 +70,7 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/). Format:
 feat(search): add fuzzy matching support
 fix(parser): handle empty function bodies
 docs: update installation instructions
-refactor!: rename App to OracleApp  # Breaking change
+refactor!: rename App to VizierApp  # Breaking change
 ```
 
 ### PR Title

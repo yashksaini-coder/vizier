@@ -1,25 +1,25 @@
-# 🔮 Oracle
+# 🔮 Vizier
 
 **A blazing-fast Rust code inspector for the terminal**
 
 <div align="center">
 
-[![CI](https://github.com/yashksaini-coder/oracle/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/yashksaini-coder/oracle/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/yashksaini-coder/oracle/blob/main/LICENSE)
-[![Crates.io](https://img.shields.io/crates/v/oracle-tui?label=crates.io)](https://crates.io/crates/oracle-tui)
+[![CI](https://github.com/yashksaini-coder/vizier/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/yashksaini-coder/vizier/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/yashksaini-coder/vizier/blob/main/LICENSE)
+[![Crates.io](https://img.shields.io/crates/v/vizier-tui?label=crates.io)](https://crates.io/crates/vizier-tui)
 [![Rust](https://img.shields.io/badge/Rust-1.70+-blue?logo=rust)](https://www.rust-lang.org/)
 
 </div>
 
 ---
 
-Oracle is a terminal-based application for exploring Rust codebases. It parses your Rust source files and provides an interactive interface to browse functions, structs, enums, traits, and more — all without leaving your terminal.
+Vizier is a terminal-based application for exploring Rust codebases. It parses your Rust source files and provides an interactive interface to browse functions, structs, enums, traits, and more — all without leaving your terminal.
 
 Built with [Ratatui](https://ratatui.rs) for a smooth, responsive TUI experience.
 
 [![Built With Ratatui](https://img.shields.io/badge/Built_With_Ratatui-000?logo=ratatui&logoColor=fff)](https://ratatui.rs/)
 
-![Oracle Demo GIF](./images/demo.gif)
+![Vizier Demo GIF](./images/demo.gif)
 
 ## ✨ Features
 
@@ -37,7 +37,7 @@ Built with [Ratatui](https://ratatui.rs) for a smooth, responsive TUI experience
 - **⚡ Smooth Animations** — Selection highlights, tab transitions
 - **⌨️ Vim-style Navigation** — `j/k` for movement, `/` for search
 
-![Oracle Crates Tab Demo](./images/image03.png)
+![Vizier Crates Tab Demo](./images/image03.png)
 
 
 ## 📦 Installation
@@ -47,32 +47,32 @@ Built with [Ratatui](https://ratatui.rs) for a smooth, responsive TUI experience
 With Rust and Cargo installed:
 
 ```bash
-cargo install oracle-tui
+cargo install vizier-tui
 ```
 
-The binary is still named `oracle`; run it with `oracle`.
+The binary is still named `vizier`; run it with `vizier`.
 
 ### From source
 
 ```bash
-git clone https://github.com/yashksaini-coder/oracle.git
-cd oracle
+git clone https://github.com/yashksaini-coder/vizier.git
+cd vizier
 cargo install --path .
 # or: make install
 ```
 
 ### Pre-built binaries
 
-See [Releases](https://github.com/yashksaini-coder/oracle/releases) for Linux (x86_64), macOS (x86_64, Apple Silicon), and Windows (x86_64) binaries.
+See [Releases](https://github.com/yashksaini-coder/vizier/releases) for Linux (x86_64), macOS (x86_64, Apple Silicon), and Windows (x86_64) binaries.
 
 ## 🚀 Usage
 
-![Oracle Copilot Chat Demo](./images/image04.png)
+![Vizier Copilot Chat Demo](./images/image04.png)
 ```bash
 # Cd into the project directory
 cd path/to/rust-project
 # Analyze current directory (must be a Cargo project root or folder with .rs files)
-oracle
+vizier
 ```
 
 ## ⌨️ Keyboard Shortcuts
@@ -129,7 +129,7 @@ make release
 
 ## 📤 Releasing (maintainers)
 
-- **Publish to crates.io** (after `cargo login`): `make publish-dry-run` then `make publish`. The crate is published as **oracle-tui** (the name "oracle" is taken by another project on crates.io).
+- **Publish to crates.io** (after `cargo login`): `make publish-dry-run` then `make publish`. The crate is published as **vizier-tui**.
 - **GitHub Release**: Push a version tag (e.g. `v0.1.0`). The [release workflow](.github/workflows/release.yml) builds binaries for Linux, macOS (Intel + Apple Silicon), and Windows and creates a release. Optionally set `CARGO_REGISTRY_TOKEN` in repo secrets to auto-publish to crates.io on tag push.
 
 ## 🤝 Contributing
@@ -152,7 +152,7 @@ We use [Conventional Commits](https://www.conventionalcommits.org/). Examples:
 - `refactor!: change API structure` (breaking change)
 ## Star History
 
-![Star History Chart](https://api.star-history.com/svg?repos=yashksaini-coder/oracle&type=date&legend=top-left)
+![Star History Chart](https://api.star-history.com/svg?repos=yashksaini-coder/vizier&type=date&legend=top-left)
 
 
 ## 📄 License
