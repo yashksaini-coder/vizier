@@ -88,7 +88,7 @@ impl<'a> DependencyView<'a> {
             Line::from(Span::styled("  • Root crate metadata or fetched docs from crates.io (right)", self.theme.style_muted())),
             Line::from(""),
             Line::from(Span::styled(
-                "Run: vizier /path/to/your/crate",
+                "Run: rustlens /path/to/your/crate",
                 self.theme.style_accent(),
             )),
         ];

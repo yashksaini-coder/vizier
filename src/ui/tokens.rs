@@ -1,4 +1,4 @@
-//! Design tokens — centralized constants for the Vizier UI.
+//! Design tokens — centralized constants for the Rustlens UI.
 
 use ratatui::{
     style::Modifier,

@@ -1,4 +1,4 @@
-//! Theme system for Vizier TUI
+//! Theme system for Rustlens TUI
 
 use ratatui::style::{Color, Modifier, Style};
 

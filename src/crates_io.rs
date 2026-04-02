@@ -34,7 +34,7 @@ const MAX_GITHUB_RESPONSE_BYTES: u64 = 64 * 1024;
 const TIMEOUT: Duration = Duration::from_secs(15);
 /// User-Agent: crates.io requires it for API requests.
 const USER_AGENT: &str =
-    "Vizier/0.1 (Rust code inspector; https://github.com/yashksaini-coder/vizier)";
+    "Rustlens/0.2 (Rust code inspector; https://github.com/yashksaini-coder/vizier)";
 
 /// Parse "https://github.com/owner/repo" or "https://github.com/owner/repo/" into Some(("owner", "repo")).
 fn parse_github_url(repo: &str) -> Option<(String, String)> {
