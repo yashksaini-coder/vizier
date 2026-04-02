@@ -207,10 +207,10 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: vizier-${{ matrix.os }}
+          name: rustlens-${{ matrix.os }}
           path: |
-            target/release/vizier
-            target/release/vizier.exe
+            target/release/rustlens
+            target/release/rustlens.exe
           if-no-files-found: ignore
 
   # Documentation build check

@@ -1,4 +1,4 @@
-# Vizier - Rust Code Inspector - Extended Makefile
+# Rustlens - Rust Code Inspector - Extended Makefile
 
 .PHONY: all build release run clean test lint lint-fix typecheck fmt fmt-fix check fix dev-setup install uninstall publish-dry-run publish clippy clippy-fix clippy-beta machete help
 
@@ -15,12 +15,12 @@ release:
 install:
 	@echo "🧹 Removing old build (target/)..."
 	cargo clean
-	@echo "📥 Installing vizier-tui (binary: vizier)..."
+	@echo "📥 Installing rustlens..."
 	cargo install --path .
 
 uninstall:
-	@echo "🗑️  Uninstalling vizier-tui..."
-	cargo uninstall vizier-tui
+	@echo "🗑️  Uninstalling rustlens..."
+	cargo uninstall rustlens
 
 publish-dry-run:
 	@echo "🔍 Dry-run: would publish to crates.io..."
@@ -31,7 +31,7 @@ publish:
 	cargo publish
 
 run:
-	@echo "🚀 Running Vizier..."
+	@echo "🚀 Running Rustlens..."
 	cargo run
 
 clean:
@@ -215,10 +215,10 @@ help:
 	@echo "  build        Build debug version"
 	@echo "  release      Build optimized release"
 	@echo "  install      Clean target/ then install binary (cargo install --path .)"
-	@echo "  uninstall   Remove vizier from ~/.cargo/bin (cargo uninstall vizier-tui)"
+	@echo "  uninstall   Remove rustlens from ~/.cargo/bin (cargo uninstall rustlens)"
 	@echo "  publish-dry-run  Check crate for publish (no upload)"
 	@echo "  publish      Publish to crates.io (requires login)"
-	@echo "  run          Run Vizier"
+	@echo "  run          Run Rustlens"
 	@echo "  clean        Remove build artifacts"
 	@echo "  test         Run tests"
 	@echo "  lint         Lint with clippy (does not fix)"
