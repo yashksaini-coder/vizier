@@ -1,5 +1,5 @@
 [package]
-name = "vizier-tui"
+name = "rustlens"
 version = "0.2.0"
 edition = "2021"
 rust-version = "1.75"
@@ -10,7 +10,7 @@ keywords = ["tui", "inspector", "rust", "analyzer", "developer-tools"]
 categories = ["command-line-utilities", "development-tools"]
 repository = "https://github.com/yashksaini-coder/vizier"
 homepage = "https://github.com/yashksaini-coder/vizier"
-documentation = "https://docs.rs/vizier_tui"
+documentation = "https://docs.rs/rustlens"
 readme = "README.md"
 
 [package.metadata.cargo-machete]
@@ -18,11 +18,11 @@ readme = "README.md"
 ignored = ["tokio"]
 
 [[bin]]
-name = "vizier"
+name = "rustlens"
 path = "src/main.rs"
 
 [lib]
-name = "vizier_lib"
+name = "rustlens_lib"
 path = "src/lib.rs"
 
 [dependencies]
