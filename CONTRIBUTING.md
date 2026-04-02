@@ -1,6 +1,6 @@
-# Contributing to Vizier
+# Contributing to Rustlens
 
-Thank you for your interest in contributing to Vizier! 🎉
+Thank you for your interest in contributing to Rustlens! 🎉
 
 ## Getting Started
 
@@ -70,7 +70,7 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/). Format:
 feat(search): add fuzzy matching support
 fix(parser): handle empty function bodies
 docs: update installation instructions
-refactor!: rename App to VizierApp  # Breaking change
+refactor!: rename App to RustlensApp  # Breaking change
 ```
 
 ### PR Title

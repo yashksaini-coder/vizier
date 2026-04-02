@@ -1,4 +1,4 @@
-# 🔮 Vizier
+# 🔍 Rustlens
 
 **A blazing-fast Rust code inspector for the terminal**
 
@@ -6,20 +6,20 @@
 
 [![CI](https://github.com/yashksaini-coder/vizier/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/yashksaini-coder/vizier/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/yashksaini-coder/vizier/blob/main/LICENSE)
-[![Crates.io](https://img.shields.io/crates/v/vizier-tui?label=crates.io)](https://crates.io/crates/vizier-tui)
+[![Crates.io](https://img.shields.io/crates/v/rustlens?label=crates.io)](https://crates.io/crates/rustlens)
 [![Rust](https://img.shields.io/badge/Rust-1.70+-blue?logo=rust)](https://www.rust-lang.org/)
 
 </div>
 
 ---
 
-Vizier is a terminal-based application for exploring Rust codebases. It parses your Rust source files and provides an interactive interface to browse functions, structs, enums, traits, and more — all without leaving your terminal.
+Rustlens is a terminal-based application for exploring Rust codebases. It parses your Rust source files and provides an interactive interface to browse functions, structs, enums, traits, and more — all without leaving your terminal.
 
 Built with [Ratatui](https://ratatui.rs) for a smooth, responsive TUI experience.
 
 [![Built With Ratatui](https://img.shields.io/badge/Built_With_Ratatui-000?logo=ratatui&logoColor=fff)](https://ratatui.rs/)
 
-![Vizier Demo GIF](./images/demo.gif)
+![Rustlens Demo GIF](./images/demo.gif)
 
 ## ✨ Features
 
@@ -37,7 +37,7 @@ Built with [Ratatui](https://ratatui.rs) for a smooth, responsive TUI experience
 - **⚡ Smooth Animations** — Selection highlights, tab transitions
 - **⌨️ Vim-style Navigation** — `j/k` for movement, `/` for search
 
-![Vizier Crates Tab Demo](./images/image03.png)
+![Rustlens Crates Tab Demo](./images/image03.png)
 
 
 ## 📦 Installation
@@ -47,10 +47,8 @@ Built with [Ratatui](https://ratatui.rs) for a smooth, responsive TUI experience
 With Rust and Cargo installed:
 
 ```bash
-cargo install vizier-tui
+cargo install rustlens
 ```
-
-The binary is still named `vizier`; run it with `vizier`.
 
 ### From source
 
@@ -67,12 +65,12 @@ See [Releases](https://github.com/yashksaini-coder/vizier/releases) for Linux (x
 
 ## 🚀 Usage
 
-![Vizier Copilot Chat Demo](./images/image04.png)
+![Rustlens Copilot Chat Demo](./images/image04.png)
 ```bash
 # Cd into the project directory
 cd path/to/rust-project
 # Analyze current directory (must be a Cargo project root or folder with .rs files)
-vizier
+rustlens
 ```
 
 ## ⌨️ Keyboard Shortcuts
@@ -129,7 +127,7 @@ make release
 
 ## 📤 Releasing (maintainers)
 
-- **Publish to crates.io** (after `cargo login`): `make publish-dry-run` then `make publish`. The crate is published as **vizier-tui**.
+- **Publish to crates.io** (after `cargo login`): `make publish-dry-run` then `make publish`. The crate is published as **rustlens**.
 - **GitHub Release**: Push a version tag (e.g. `v0.1.0`). The [release workflow](.github/workflows/release.yml) builds binaries for Linux, macOS (Intel + Apple Silicon), and Windows and creates a release. Optionally set `CARGO_REGISTRY_TOKEN` in repo secrets to auto-publish to crates.io on tag push.
 
 ## 🤝 Contributing
