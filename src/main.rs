@@ -1,4 +1,4 @@
-//! Oracle - Rust Code Inspector
+//! Vizier - Rust Code Inspector
 //!
 //! A terminal-based Rust code inspector with beautiful TUI.
 
@@ -11,9 +11,9 @@ use crossterm::{
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
-use oracle_lib::{
+use vizier_lib::{
     app::App,
-    ui::{app::tabs_rect_for_area, app::Focus, app::Tab, AnimationState, OracleUi},
+    ui::{app::tabs_rect_for_area, app::Focus, app::Tab, AnimationState, VizierUi},
 };
 use ratatui::layout::Rect;
 use ratatui::{backend::CrosstermBackend, Terminal};
@@ -114,7 +114,7 @@ fn run_app(terminal: &mut Terminal<CrosstermBackend<io::Stdout>>, app: &mut App)
             let filtered = app.get_filtered_items();
             let selected = app.list_state.selected();
 
-            let installed_items: Vec<&oracle_lib::analyzer::AnalyzedItem> = app
+            let installed_items: Vec<&vizier_lib::analyzer::AnalyzedItem> = app
                 .installed_crate_filtered
                 .iter()
                 .filter_map(|&i| app.installed_crate_items.get(i))
@@ -126,7 +126,7 @@ fn run_app(terminal: &mut Terminal<CrosstermBackend<io::Stdout>>, app: &mut App)
                 } else {
                     Some(app.items.as_slice())
                 };
-            let ui = OracleUi::new(&app.theme)
+            let ui = VizierUi::new(&app.theme)
                 .items(&app.items)
                 .all_items_impl_lookup(all_items_impl)
                 .filtered_items(&filtered)
@@ -276,7 +276,7 @@ fn handle_key_event(
     inspector_scroll: &mut usize,
     animation: &mut AnimationState,
 ) {
-    use oracle_lib::ui::app::Tab;
+    use vizier_lib::ui::app::Tab;
 
     // When Copilot chat panel is open: PgDn/PgUp/arrows/Home/End always scroll the chat (no need to focus chat first)
     if app.copilot_chat_open {
@@ -360,7 +360,7 @@ fn handle_key_event(
         KeyCode::Char('g')
             if modifiers.is_empty() && !in_copilot_chat && app.focus != Focus::Search =>
         {
-            let _ = webbrowser::open("https://github.com/yashksaini-coder/oracle");
+            let _ = webbrowser::open("https://github.com/yashksaini-coder/vizier");
             return;
         }
         KeyCode::Char('C')
@@ -516,7 +516,7 @@ fn handle_search_input(app: &mut App, code: KeyCode, modifiers: KeyModifiers) {
 }
 
 fn handle_list_input(app: &mut App, code: KeyCode, modifiers: KeyModifiers) {
-    use oracle_lib::ui::app::Tab;
+    use vizier_lib::ui::app::Tab;
 
     match code {
         KeyCode::Down | KeyCode::Char('j') => {
