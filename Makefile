@@ -1,4 +1,4 @@
-# Oracle - Rust Code Inspector - Extended Makefile
+# Vizier - Rust Code Inspector - Extended Makefile
 
 .PHONY: all build release run clean test lint lint-fix typecheck fmt fmt-fix check fix dev-setup install uninstall publish-dry-run publish clippy clippy-fix clippy-beta machete help
 
@@ -15,12 +15,12 @@ release:
 install:
 	@echo "🧹 Removing old build (target/)..."
 	cargo clean
-	@echo "📥 Installing oracle-tui (binary: oracle)..."
+	@echo "📥 Installing vizier-tui (binary: vizier)..."
 	cargo install --path .
 
 uninstall:
-	@echo "🗑️  Uninstalling oracle-tui..."
-	cargo uninstall oracle-tui
+	@echo "🗑️  Uninstalling vizier-tui..."
+	cargo uninstall vizier-tui
 
 publish-dry-run:
 	@echo "🔍 Dry-run: would publish to crates.io..."
@@ -31,7 +31,7 @@ publish:
 	cargo publish
 
 run:
-	@echo "🚀 Running Oracle..."
+	@echo "🚀 Running Vizier..."
 	cargo run
 
 clean:
@@ -215,10 +215,10 @@ help:
 	@echo "  build        Build debug version"
 	@echo "  release      Build optimized release"
 	@echo "  install      Clean target/ then install binary (cargo install --path .)"
-	@echo "  uninstall   Remove oracle from ~/.cargo/bin (cargo uninstall oracle-tui)"
+	@echo "  uninstall   Remove vizier from ~/.cargo/bin (cargo uninstall vizier-tui)"
 	@echo "  publish-dry-run  Check crate for publish (no upload)"
 	@echo "  publish      Publish to crates.io (requires login)"
-	@echo "  run          Run Oracle"
+	@echo "  run          Run Vizier"
 	@echo "  clean        Remove build artifacts"
 	@echo "  test         Run tests"
 	@echo "  lint         Lint with clippy (does not fix)"
