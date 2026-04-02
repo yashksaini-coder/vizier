@@ -1,4 +1,4 @@
-//! Theme system for Oracle TUI
+//! Theme system for Vizier TUI
 
 use ratatui::style::{Color, Modifier, Style};
 
