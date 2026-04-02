@@ -1,4 +1,4 @@
-//! Vizier - Rust Code Inspector
+//! Rustlens - Rust Code Inspector
 //!
 //! A terminal-based Rust code inspector with beautiful TUI.
 
@@ -13,11 +13,11 @@ use crossterm::{
 };
 use ratatui::layout::Rect;
 use ratatui::{backend::CrosstermBackend, Terminal};
-use std::{env, io, path::PathBuf, time::Duration};
-use vizier_lib::{
+use rustlens_lib::{
     app::App,
-    ui::{app::tabs_rect_for_area, app::Focus, app::Tab, AnimationState, VizierUi},
+    ui::{app::tabs_rect_for_area, app::Focus, app::Tab, AnimationState, RustlensUi},
 };
+use std::{env, io, path::PathBuf, time::Duration};
 
 fn main() -> Result<()> {
     // Load .env so GITHUB_TOKEN etc. are available (cwd first, then project path overrides)
@@ -114,7 +114,7 @@ fn run_app(terminal: &mut Terminal<CrosstermBackend<io::Stdout>>, app: &mut App)
             let filtered = app.get_filtered_items();
             let selected = app.list_state.selected();
 
-            let installed_items: Vec<&vizier_lib::analyzer::AnalyzedItem> = app
+            let installed_items: Vec<&rustlens_lib::analyzer::AnalyzedItem> = app
                 .installed_crate_filtered
                 .iter()
                 .filter_map(|&i| app.installed_crate_items.get(i))
@@ -126,7 +126,7 @@ fn run_app(terminal: &mut Terminal<CrosstermBackend<io::Stdout>>, app: &mut App)
                 } else {
                     Some(app.items.as_slice())
                 };
-            let ui = VizierUi::new(&app.theme)
+            let ui = RustlensUi::new(&app.theme)
                 .items(&app.items)
                 .all_items_impl_lookup(all_items_impl)
                 .filtered_items(&filtered)
@@ -274,7 +274,7 @@ fn handle_key_event(
     inspector_scroll: &mut usize,
     animation: &mut AnimationState,
 ) {
-    use vizier_lib::ui::app::Tab;
+    use rustlens_lib::ui::app::Tab;
 
     // When Copilot chat panel is open: PgDn/PgUp/arrows/Home/End always scroll the chat (no need to focus chat first)
     if app.copilot_chat_open {
@@ -512,7 +512,7 @@ fn handle_search_input(app: &mut App, code: KeyCode, modifiers: KeyModifiers) {
 }
 
 fn handle_list_input(app: &mut App, code: KeyCode, modifiers: KeyModifiers) {
-    use vizier_lib::ui::app::Tab;
+    use rustlens_lib::ui::app::Tab;
 
     match code {
         KeyCode::Down | KeyCode::Char('j') => {
