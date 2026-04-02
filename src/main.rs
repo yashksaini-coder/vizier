@@ -11,13 +11,13 @@ use crossterm::{
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
+use ratatui::layout::Rect;
+use ratatui::{backend::CrosstermBackend, Terminal};
+use std::{env, io, path::PathBuf, time::Duration};
 use vizier_lib::{
     app::App,
     ui::{app::tabs_rect_for_area, app::Focus, app::Tab, AnimationState, VizierUi},
 };
-use ratatui::layout::Rect;
-use ratatui::{backend::CrosstermBackend, Terminal};
-use std::{env, io, path::PathBuf, time::Duration};
 
 fn main() -> Result<()> {
     // Load .env so GITHUB_TOKEN etc. are available (cwd first, then project path overrides)

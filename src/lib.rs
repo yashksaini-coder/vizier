@@ -12,4 +12,4 @@ pub mod ui;
 pub mod utils;
 
 pub use app::App;
-pub use error::{VizierError, Result};
+pub use error::{Result, VizierError};
