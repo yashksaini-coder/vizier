@@ -1,4 +1,4 @@
-//! Main Oracle TUI application — composed from blocks (header, list, status, overlays, right_panel).
+//! Main Vizier TUI application — composed from blocks (header, list, status, overlays, right_panel).
 
 mod header;
 mod layout;
@@ -26,8 +26,8 @@ use ratatui::{
     widgets::{block::BorderType, Block, Borders, Widget},
 };
 
-/// Main Oracle UI widget — data and builder; rendering is delegated to block modules.
-pub struct OracleUi<'a> {
+/// Main Vizier UI widget — data and builder; rendering is delegated to block modules.
+pub struct VizierUi<'a> {
     // Data
     pub(super) items: &'a [AnalyzedItem],
     pub(super) all_items_impl_lookup: Option<&'a [AnalyzedItem]>,
@@ -64,7 +64,7 @@ pub struct OracleUi<'a> {
     pub(super) copilot_chat_scroll: usize,
 }
 
-impl<'a> OracleUi<'a> {
+impl<'a> VizierUi<'a> {
     pub fn new(theme: &'a Theme) -> Self {
         Self {
             items: &[],
@@ -301,7 +301,7 @@ impl<'a> OracleUi<'a> {
     }
 }
 
-impl Widget for OracleUi<'_> {
+impl Widget for VizierUi<'_> {
     fn render(self, area: Rect, buf: &mut Buffer) {
         use layout::{BODY_MARGIN, HEADER_HEIGHT, STATUS_HEIGHT};
 

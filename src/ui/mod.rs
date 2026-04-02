@@ -10,7 +10,7 @@ pub mod splash;
 pub mod theme;
 
 pub use animation::{AnimationState, Easing, SmoothScroll};
-pub use app::{tabs_rect_for_area, Focus, OracleUi, Tab};
+pub use app::{tabs_rect_for_area, Focus, VizierUi, Tab};
 pub use dependency_view::DependencyView;
 pub use inspector::InspectorPanel;
 pub use search::{
