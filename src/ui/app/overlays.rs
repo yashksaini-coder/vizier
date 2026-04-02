@@ -8,9 +8,9 @@ use ratatui::{
     widgets::{Block, Borders, Clear, Paragraph, Widget},
 };
 
-use super::OracleUi;
+use super::VizierUi;
 
-impl<'a> OracleUi<'a> {
+impl<'a> VizierUi<'a> {
     pub(super) fn render_settings_overlay(&self, area: Rect, buf: &mut Buffer) {
         if !self.show_settings {
             return;

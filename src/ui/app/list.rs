@@ -13,9 +13,9 @@ use ratatui::{
 };
 
 use super::types::{Focus, Tab};
-use super::OracleUi;
+use super::VizierUi;
 
-impl<'a> OracleUi<'a> {
+impl<'a> VizierUi<'a> {
     pub(super) fn render_list(&self, area: Rect, buf: &mut Buffer) {
         if self.current_tab == Tab::Crates {
             if self.selected_installed_crate.is_some() {
