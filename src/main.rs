@@ -174,16 +174,14 @@ fn run_app(terminal: &mut Terminal<CrosstermBackend<io::Stdout>>, app: &mut App)
 
         if event::poll(poll_duration)? {
             match event::read()? {
-                Event::Key(key) => {
-                    if key.kind == KeyEventKind::Press {
-                        handle_key_event(
-                            app,
-                            key.code,
-                            key.modifiers,
-                            &mut inspector_scroll,
-                            &mut animation,
-                        );
-                    }
+                Event::Key(key) if key.kind == KeyEventKind::Press => {
+                    handle_key_event(
+                        app,
+                        key.code,
+                        key.modifiers,
+                        &mut inspector_scroll,
+                        &mut animation,
+                    );
                 }
                 Event::Mouse(mouse) => {
                     if let MouseEventKind::Down(MouseButton::Left) = mouse.kind {
@@ -484,10 +482,8 @@ fn handle_search_input(app: &mut App, code: KeyCode, modifiers: KeyModifiers) {
                 app.focus = Focus::List;
             }
         }
-        KeyCode::Up => {
-            if app.show_completion {
-                app.prev_completion();
-            }
+        KeyCode::Up if app.show_completion => {
+            app.prev_completion();
         }
         KeyCode::Tab | KeyCode::BackTab if modifiers.is_empty() => {
             if code == KeyCode::Tab {
@@ -551,19 +547,17 @@ fn handle_list_input(app: &mut App, code: KeyCode, modifiers: KeyModifiers) {
                 app.focus = Focus::Inspector;
             }
         }
-        KeyCode::Char('o' | 'c') if modifiers.is_empty() => {
-            if app.current_tab == Tab::Crates {
-                if let Some(name) = app.selected_crate_name_for_display() {
-                    let url = if code == KeyCode::Char('c') {
-                        format!("https://crates.io/crates/{}", name)
-                    } else {
-                        format!("https://docs.rs/{}", name)
-                    };
-                    if webbrowser::open(&url).is_ok() {
-                        app.status_message = format!("Opened {} in browser", name);
-                    } else {
-                        app.status_message = format!("Failed to open {}", url);
-                    }
+        KeyCode::Char('o' | 'c') if modifiers.is_empty() && app.current_tab == Tab::Crates => {
+            if let Some(name) = app.selected_crate_name_for_display() {
+                let url = if code == KeyCode::Char('c') {
+                    format!("https://crates.io/crates/{}", name)
+                } else {
+                    format!("https://docs.rs/{}", name)
+                };
+                if webbrowser::open(&url).is_ok() {
+                    app.status_message = format!("Opened {} in browser", name);
+                } else {
+                    app.status_message = format!("Failed to open {}", url);
                 }
             }
         }
@@ -636,19 +630,17 @@ fn handle_inspector_input(
         KeyCode::Home | KeyCode::Char('g') => {
             *inspector_scroll = 0;
         }
-        KeyCode::Char('o' | 'c') if modifiers.is_empty() => {
-            if app.current_tab == Tab::Crates {
-                if let Some(name) = app.selected_crate_name_for_display() {
-                    let url = if code == KeyCode::Char('c') {
-                        format!("https://crates.io/crates/{}", name)
-                    } else {
-                        format!("https://docs.rs/{}", name)
-                    };
-                    if webbrowser::open(&url).is_ok() {
-                        app.status_message = format!("Opened {} in browser", name);
-                    } else {
-                        app.status_message = format!("Failed to open {}", url);
-                    }
+        KeyCode::Char('o' | 'c') if modifiers.is_empty() && app.current_tab == Tab::Crates => {
+            if let Some(name) = app.selected_crate_name_for_display() {
+                let url = if code == KeyCode::Char('c') {
+                    format!("https://crates.io/crates/{}", name)
+                } else {
+                    format!("https://docs.rs/{}", name)
+                };
+                if webbrowser::open(&url).is_ok() {
+                    app.status_message = format!("Opened {} in browser", name);
+                } else {
+                    app.status_message = format!("Failed to open {}", url);
                 }
             }
         }
