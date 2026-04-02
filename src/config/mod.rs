@@ -1,4 +1,4 @@
-//! Configuration system for Vizier
+//! Configuration system for Rustlens
 
 mod settings;
 

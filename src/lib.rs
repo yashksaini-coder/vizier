@@ -1,4 +1,4 @@
-//! Vizier - Rust Code Inspector Library
+//! Rustlens - Rust Code Inspector Library
 //!
 //! A comprehensive library for analyzing Rust code, parsing cargo metadata,
 //! and providing a beautiful TUI for code inspection.
@@ -12,4 +12,4 @@ pub mod ui;
 pub mod utils;
 
 pub use app::App;
-pub use error::{Result, VizierError};
+pub use error::{Result, RustlensError};

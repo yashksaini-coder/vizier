@@ -93,8 +93,8 @@ impl Settings {
 
     fn config_path() -> Result<PathBuf> {
         let config_dir = dirs::config_dir()
-            .ok_or_else(|| crate::error::VizierError::Config("No config directory".into()))?;
-        Ok(config_dir.join("vizier").join("config.yaml"))
+            .ok_or_else(|| crate::error::RustlensError::Config("No config directory".into()))?;
+        Ok(config_dir.join("rustlens").join("config.yaml"))
     }
 }
 

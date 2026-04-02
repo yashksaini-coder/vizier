@@ -1,9 +1,9 @@
-//! Error types for Vizier
+//! Error types for Rustlens
 
 use thiserror::Error;
 
 #[derive(Error, Debug)]
-pub enum VizierError {
+pub enum RustlensError {
     #[error("IO error: {0}")]
     Io(#[from] std::io::Error),
 
@@ -29,10 +29,10 @@ pub enum VizierError {
     Other(String),
 }
 
-pub type Result<T> = std::result::Result<T, VizierError>;
+pub type Result<T> = std::result::Result<T, RustlensError>;
 
-impl From<syn::Error> for VizierError {
+impl From<syn::Error> for RustlensError {
     fn from(e: syn::Error) -> Self {
-        VizierError::Parse(e.to_string())
+        RustlensError::Parse(e.to_string())
     }
 }
