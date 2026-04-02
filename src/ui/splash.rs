@@ -75,7 +75,7 @@ pub fn run_splash(terminal: &mut Terminal<CrosstermBackend<io::Stdout>>) -> anyh
                 Line::from(""),
                 Line::from(vec![
                     Span::styled(
-                        "ORACLE",
+                        "VIZIER",
                         theme.style_accent_bold().add_modifier(Modifier::BOLD),
                     ),
                     Span::styled("  ·  ", theme.style_muted()),

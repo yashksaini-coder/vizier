@@ -1,4 +1,4 @@
-//! Header block: ORACLE logo + live metrics (items, crates, target size, creator).
+//! Header block: VIZIER logo + live metrics (items, crates, target size, creator).
 
 use crate::utils::format_bytes;
 
@@ -9,19 +9,19 @@ use ratatui::{
     widgets::{Paragraph, Widget},
 };
 
-use super::OracleUi;
+use super::VizierUi;
 
-const ORACLE_ART: [&str; 6] = [
-    " ██████╗ ██████╗  █████╗  ██████╗██╗     ███████╗",
-    "██╔═══██╗██╔══██╗██╔══██╗██╔════╝██║     ██╔════╝",
-    "██║   ██║██████╔╝███████║██║     ██║     █████╗  ",
-    "██║   ██║██╔══██╗██╔══██║██║     ██║     ██╔══╝  ",
-    "╚██████╔╝██║  ██║██║  ██║╚██████╗███████╗███████╗",
-    " ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚══════╝",
+const VIZIER_ART: [&str; 6] = [
+    "██╗   ██╗██╗███████╗██╗███████╗██████╗ ",
+    "██║   ██║██║╚══███╔╝██║██╔════╝██╔══██╗",
+    "██║   ██║██║  ███╔╝ ██║█████╗  ██████╔╝",
+    "╚██╗ ██╔╝██║ ███╔╝  ██║██╔══╝  ██╔══██╗",
+    " ╚████╔╝ ██║███████╗██║███████╗██║  ██║",
+    "  ╚═══╝  ╚═╝╚══════╝╚═╝╚══════╝╚═╝  ╚═╝",
 ];
 
-impl<'a> OracleUi<'a> {
-    /// Renders the header: left = ASCII art ORACLE logo, right = live metrics.
+impl<'a> VizierUi<'a> {
+    /// Renders the header: left = ASCII art VIZIER logo, right = live metrics.
     pub(super) fn render_header(&self, area: Rect, buf: &mut Buffer) {
         let (fn_count, struct_count, enum_count, trait_count, mod_count) = self.items.iter().fold(
             (0usize, 0usize, 0usize, 0usize, 0usize),
@@ -57,7 +57,7 @@ impl<'a> OracleUi<'a> {
             .split(area);
         let logo_area = header_chunks[0];
         let tagline_area = header_chunks[1];
-        let logo_lines: Vec<Line> = ORACLE_ART
+        let logo_lines: Vec<Line> = VIZIER_ART
             .iter()
             .take(logo_area.height as usize)
             .map(|s| Line::from(Span::styled(*s, self.theme.style_accent())))
