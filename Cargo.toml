@@ -1,5 +1,5 @@
 [package]
-name = "oracle-tui"
+name = "vizier-tui"
 version = "0.1.1"
 edition = "2021"
 rust-version = "1.75"
@@ -8,9 +8,9 @@ license = "MIT"
 authors = ["yashksaini-coder <yashksaini89@gmail.com>"]
 keywords = ["tui", "inspector", "rust", "analyzer", "developer-tools"]
 categories = ["command-line-utilities", "development-tools"]
-repository = "https://github.com/yashksaini-coder/oracle"
-homepage = "https://github.com/yashksaini-coder/oracle"
-documentation = "https://docs.rs/oracle_tui"
+repository = "https://github.com/yashksaini-coder/vizier"
+homepage = "https://github.com/yashksaini-coder/vizier"
+documentation = "https://docs.rs/vizier_tui"
 readme = "README.md"
 
 [package.metadata.cargo-machete]
@@ -18,11 +18,11 @@ readme = "README.md"
 ignored = ["tokio"]
 
 [[bin]]
-name = "oracle"
+name = "vizier"
 path = "src/main.rs"
 
 [lib]
-name = "oracle_lib"
+name = "vizier_lib"
 path = "src/lib.rs"
 
 [dependencies]

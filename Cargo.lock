@@ -984,31 +984,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "04744f49eae99ab78e0d5c0b603ab218f515ea8cfe5a456d7629ad883a3b6e7d"
 
 [[package]]
-name = "oracle-tui"
-version = "0.1.1"
-dependencies = [
- "anyhow",
- "cargo_metadata",
- "crossterm",
- "dirs",
- "dotenvy",
- "fuzzy-matcher",
- "petgraph",
- "proc-macro2",
- "quote",
- "ratatui",
- "reqwest",
- "serde",
- "serde_json",
- "serde_yaml",
- "syn",
- "thiserror 2.0.18",
- "toml",
- "unicode-width 0.2.0",
- "webbrowser",
-]
-
-[[package]]
 name = "parking_lot"
 version = "0.12.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1887,6 +1862,31 @@ name = "vcpkg"
 version = "0.2.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "accd4ea62f7bb7a82fe23066fb0957d48ef677f6eeb8215f372f52e48bb32426"
+
+[[package]]
+name = "vizier-tui"
+version = "0.1.1"
+dependencies = [
+ "anyhow",
+ "cargo_metadata",
+ "crossterm",
+ "dirs",
+ "dotenvy",
+ "fuzzy-matcher",
+ "petgraph",
+ "proc-macro2",
+ "quote",
+ "ratatui",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "serde_yaml",
+ "syn",
+ "thiserror 2.0.18",
+ "toml",
+ "unicode-width 0.2.0",
+ "webbrowser",
+]
 
 [[package]]
 name = "walkdir"
