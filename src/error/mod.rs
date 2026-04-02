@@ -1,9 +1,9 @@
-//! Error types for Oracle
+//! Error types for Vizier
 
 use thiserror::Error;
 
 #[derive(Error, Debug)]
-pub enum OracleError {
+pub enum VizierError {
     #[error("IO error: {0}")]
     Io(#[from] std::io::Error),
 
@@ -29,10 +29,10 @@ pub enum OracleError {
     Other(String),
 }
 
-pub type Result<T> = std::result::Result<T, OracleError>;
+pub type Result<T> = std::result::Result<T, VizierError>;
 
-impl From<syn::Error> for OracleError {
+impl From<syn::Error> for VizierError {
     fn from(e: syn::Error) -> Self {
-        OracleError::Parse(e.to_string())
+        VizierError::Parse(e.to_string())
     }
 }
